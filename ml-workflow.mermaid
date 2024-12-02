@@ -1,0 +1,26 @@
+flowchart TD
+    D[Raw Dataset] --> P[Data Preprocessing]
+    P --> S[Split Data]
+    
+    subgraph Training[Training Phase]
+        S --> |Training Set| T[Model Training]
+        T --> |Trained Model| V[Validation]
+        V --> |Poor Performance| H{Hyperparameter Tuning}
+        H --> |Adjust Parameters| T
+        V --> |Good Performance| M[Final Model]
+    end
+    
+    subgraph CrossVal[Cross Validation]
+        S --> |K Folds| CV[K-Fold Cross Validation]
+        CV --> |Fold 1| F1[Train on K-1 Folds]
+        CV --> |Fold 2| F2[Validate on Kth Fold]
+        F1 --> E[Average Metrics]
+        F2 --> E
+        E --> |Poor Performance| H
+        E --> |Good Performance| M
+    end
+    
+    M --> |Test Set| TS[Final Testing]
+    
+    style Training fill:#f9f,stroke:#333,stroke-width:4px
+    style CrossVal fill:#bbf,stroke:#333,stroke-width:4px

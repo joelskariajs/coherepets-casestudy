@@ -1,0 +1,25 @@
+,,
+,,
+,,
+,PriorAuth (2023-2024),
+,Field name,Description
+,id,Unique prior authorization ID
+,pet_name,Name of pet in prior authorization
+,service,Type of procedure requested
+,submission_date,Date prior authorization is submitted
+,provider_id,Unique ID for veterinarian
+,unit,Number of units of procedure requested
+,authstatus,Whether or not the prior authorization was approved. “Pending” indicates auth is not decisioned yet.
+,auto_approved,was this authorization auto approved
+,clinical_reviewer,Unique ID for reviewer of prior authorization.
+,pet_id,Unique ID for pet
+,,
+,,
+,Claims History (2021-2023),
+,Column,Description
+,Pet_Name,Name of pet in claim
+,Provider NPI,Unique ID for veterinarian
+,Claim ID,Unique ID for claim
+,Claim Type,Type of procedure rendered
+,Amount Paid,Amount paid by insurance
+,Pet ID,Unique ID for pet
